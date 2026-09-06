@@ -11,13 +11,11 @@ public class ScaleChange : MonoBehaviour
     {
         if (other.CompareTag("Customer"))
         {
-            Debug.Log("I'm small!");
             other.gameObject.transform.localScale = triggerScale;
         }
 
         if (other.CompareTag("Player"))
         {
-            Debug.Log("I'm small!");
             other.gameObject.transform.localScale = triggerScale;
         }
     }
@@ -26,13 +24,11 @@ public class ScaleChange : MonoBehaviour
     {
         if (other.CompareTag("Customer"))
         {
-            Debug.Log("I'm small!");
             other.gameObject.transform.localScale = originalScale;
         }
 
         if (other.CompareTag("Player"))
         {
-            Debug.Log("I'm small!");
             other.gameObject.transform.localScale = originalScale;
         }
     }
