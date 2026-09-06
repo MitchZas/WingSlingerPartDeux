@@ -23,7 +23,7 @@ public class ClickMovement : MonoBehaviour
     {
         if (customerClicked)
         {
-            Debug.Log("Bring me to a table!");
+           
         }
     }
 }
