@@ -1,9 +1,12 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class InputHandler : MonoBehaviour
 {
     private Camera _mainCamera;
+
+    public UnityEvent mouseClicked;
 
     private void Awake()
     {
@@ -15,6 +18,7 @@ public class InputHandler : MonoBehaviour
         if (!context.started) return;
 
         var rayHit = Physics2D.GetRayIntersection(_mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
+        mouseClicked.Invoke();
         if (!rayHit.collider) return;
 
         Debug.Log(rayHit.collider.gameObject.name);
