@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a05aeb077532028478105143eff341c5
+guid: fb30251a396a3384ea134109865d59ed
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -103,7 +103,7 @@ ScriptedImporter:
     addShadowCasters: 0
     generateIndividualEvents: 1
     generateSpriteAtlas: 1
-  platformSettingsDirtyTick: 639243072512950625
+  platformSettingsDirtyTick: 639243802029817196
   singleSpriteImportData:
   - name: 
     originalName: 
@@ -127,9 +127,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Bigger_basket
+  - name: LeftDoorBench
     originalName: 
-    pivot: {x: 0.5, y: -1.3000001}
+    pivot: {x: 0.6060606, y: -3.392857}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -137,9 +137,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 32
-      height: 10
-    spriteID: 6bb5debbb247f794b979fbb58940afe6
+      width: 33
+      height: 28
+    spriteID: 8779b41e2bcb67a4982aca547c4f12f2
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -147,31 +147,31 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: -10}
+    uvTransform: {x: 4, y: 4}
   spriteSheetImportData: []
   tileSetImportData: []
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 1988092741
+      value0: 3329878859
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: Bigger_basket
+    name: LeftDoorBench
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Bigger_basket
+    - name: LeftDoorBench
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 0
-        y: -1
-        width: 32
-        height: 32
-      spriteId: 6bb5debbb247f794b979fbb58940afe6
+        x: 140
+        y: 95
+        width: 33
+        height: 28
+      spriteId: 8779b41e2bcb67a4982aca547c4f12f2
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
@@ -216,5 +216,5 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   generatePhysicsShape: 0
   secondarySpriteTextures: []
-  previousTextureSize: {x: 64, y: 32}
-  canvasSize: {x: 32, y: 32}
+  previousTextureSize: {x: 64, y: 64}
+  canvasSize: {x: 320, y: 224}
