@@ -4,8 +4,8 @@ using UnityEngine.UIElements;
 
 public class ScaleChange : MonoBehaviour
 {
-    public Vector3 triggerScale = new Vector3(.5f, .75f, 1f);
-    public Vector3 originalScale = new Vector3(.5f, 1f, 1f);
+    public Vector3 triggerScale = new Vector3(1.1f, 1.1f, 1.1f);
+    public Vector3 originalScale = new Vector3(1.7f, 1.7f, 1.7f);
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -17,6 +17,7 @@ public class ScaleChange : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             other.gameObject.transform.localScale = triggerScale;
+            Debug.Log(triggerScale);
         }
     }
 
