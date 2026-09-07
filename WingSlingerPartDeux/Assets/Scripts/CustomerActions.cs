@@ -18,8 +18,9 @@ public class CustomerActions : MonoBehaviour
     private CustomerState currentState;
 
     [SerializeField] ClickMovement clickMovement;
+    [SerializeField] Player player;
     [SerializeField] private GameObject ExclamationPoint;
-    [SerializeField] GameObject Player;
+    [SerializeField] GameObject PlayerChar;
     [SerializeField] GameObject Customer;
 
     public UnityEvent orderPlaced;
@@ -44,11 +45,12 @@ public class CustomerActions : MonoBehaviour
     public void TakeOrder(Table table)
     {
         if (currentState != CustomerState.ReadyToOrder) return;
-        Player.transform.position = table.orderPosition.position;
+        if (player.IsBusy()) return;
+        PlayerChar.transform.position = table.orderPosition.position;
         ExclamationPoint.SetActive(false);
-        // Put paper on table 
-        // Click paper
-        // Bring to counter 
-        // Drop off at counter
+        player.SetBusy(true);
+        // Put Order above Player's Head
+        // Bring to counter & drop off order
+        //player.isBusy = false;
     }
 }
