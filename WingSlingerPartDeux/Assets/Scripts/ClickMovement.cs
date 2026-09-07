@@ -18,7 +18,7 @@ public class ClickMovement : MonoBehaviour
     {
         if (!clickedObject.CompareTag("Customer")) return;
 
-        Player.transform.position = new Vector3(-0.48f, .43f, 0);
+        Player.transform.position = new Vector3(-0.61f, .58f, 0);
         customerClicked = true;
         Debug.Log(customerClicked);
     }
