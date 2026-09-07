@@ -10,10 +10,14 @@ public class ClickMovement : MonoBehaviour
     [SerializeField] GameObject Table1Position;
 
     private bool customerClicked;
+    public bool customerIsSitting;
+
+    public UnityEvent customerOrders;
 
     void Start()
     {
         customerClicked = false;
+        customerIsSitting = false;
     }
 
     public void MoveTowardsCustomer(GameObject clickedObject)
@@ -29,11 +33,12 @@ public class ClickMovement : MonoBehaviour
     {
         if (!clickedObject.CompareTag("Table")) return;
 
-        if (customerClicked = true && clickedObject == Table)
+        if (customerClicked == true && clickedObject == Table)
         {
             Customer.transform.position = Table1Position.transform.position;
         }
-    }
 
-    //public List<GameObject> tableList = new List<GameObject>();
+        customerIsSitting = true;
+        customerOrders.Invoke();
+    }
 }
