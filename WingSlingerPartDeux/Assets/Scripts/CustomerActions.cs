@@ -15,8 +15,9 @@ public class CustomerActions : MonoBehaviour
         Eating,
         Done
     }
-    
-    
+
+    private CustomerState currentState;
+
     [SerializeField] ClickMovement clickMovement;
     [SerializeField] private GameObject ExclamationPoint;
 
@@ -36,5 +37,10 @@ public class CustomerActions : MonoBehaviour
         ExclamationPoint.SetActive(true);
         Debug.Log("I'm ready to order");
         orderPlaced.Invoke();
+    }
+
+    private void SeatAtTable()
+    {
+        currentState = CustomerState.WaitingToBeSeated;
     }
 }
