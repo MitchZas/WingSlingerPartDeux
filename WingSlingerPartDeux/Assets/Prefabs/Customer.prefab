@@ -255,6 +255,7 @@ GameObject:
   - component: {fileID: 3054518769994331394}
   - component: {fileID: 1434847483220700505}
   - component: {fileID: 2614802692074191583}
+  - component: {fileID: 3180814582063126178}
   m_Layer: 5
   m_Name: ExclaminationPointCanvas
   m_TagString: Untagged
@@ -346,3 +347,22 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &3180814582063126178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8888089761818797715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfee888a98950f47b75a7cd4a38621b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CustomerActions
+  clickMovement: {fileID: 0}
+  ExclamationPoint: {fileID: 0}
+  Player: {fileID: 0}
+  Customer: {fileID: 0}
+  orderPlaced:
+    m_PersistentCalls:
+      m_Calls: []

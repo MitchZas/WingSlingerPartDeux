@@ -251,25 +251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClickMovement
   Player: {fileID: 2087077218}
-  Customer: {fileID: 1854131620}
-  Table: {fileID: 1329272291}
-  Table1Position: {fileID: 1283367067}
-  customerIsSitting: 0
-  customerOrders:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 760891765}
-        m_TargetAssemblyTypeName: CustomerActions, Assembly-CSharp
-        m_MethodName: CustomerOrders
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  CustomerActions: {fileID: 1854131621}
 --- !u!1 &313476715
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,6 +806,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CustomerActions
   clickMovement: {fileID: 198932599}
   ExclamationPoint: {fileID: 5062720772100992200}
+  Player: {fileID: 0}
+  Customer: {fileID: 0}
   orderPlaced:
     m_PersistentCalls:
       m_Calls: []
@@ -1340,6 +1324,25 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5771124821502906223, guid: 5ab6077ab5765b042b222deec12e079e, type: 3}
   m_PrefabInstance: {fileID: 5062720772100992199}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1854131621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854131620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfee888a98950f47b75a7cd4a38621b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CustomerActions
+  clickMovement: {fileID: 198932599}
+  ExclamationPoint: {fileID: 5062720772100992200}
+  Player: {fileID: 2087077218}
+  Customer: {fileID: 1854131620}
+  orderPlaced:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1934455697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1801,7 +1804,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5771124821502906223, guid: 5ab6077ab5765b042b222deec12e079e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1854131621}
   m_SourcePrefab: {fileID: 100100000, guid: 5ab6077ab5765b042b222deec12e079e, type: 3}
 --- !u!1 &5062720772100992200 stripped
 GameObject:

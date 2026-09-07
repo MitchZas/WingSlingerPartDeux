@@ -5,19 +5,13 @@ using UnityEngine.Events;
 public class ClickMovement : MonoBehaviour
 {
     [SerializeField] GameObject Player;
-    [SerializeField] GameObject Customer;
-    [SerializeField] GameObject Table;
-    [SerializeField] GameObject Table1Position;
+    [SerializeField] CustomerActions CustomerActions;
 
     private bool customerClicked;
-    public bool customerIsSitting;
-
-    public UnityEvent customerOrders;
 
     void Start()
     {
         customerClicked = false;
-        customerIsSitting = false;
     }
 
     public void MoveTowardsCustomer(GameObject clickedObject)
@@ -32,13 +26,7 @@ public class ClickMovement : MonoBehaviour
     public void CustomerToTable(GameObject clickedObject)
     {
         if (!clickedObject.CompareTag("Table")) return;
-
-        if (customerClicked == true && clickedObject == Table)
-        {
-            Customer.transform.position = Table1Position.transform.position;
-        }
-
-        customerIsSitting = true;
-        customerOrders.Invoke();
+        Table table = clickedObject.GetComponent<Table>();
+        CustomerActions.SeatAtTable(table);
     }
 }

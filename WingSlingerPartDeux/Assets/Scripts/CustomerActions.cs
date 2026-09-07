@@ -8,7 +8,6 @@ public class CustomerActions : MonoBehaviour
     private enum CustomerState
     {
         WaitingToBeSeated,
-        WalkingToTable,
         Seated,
         WaitingToOrder,
         ReadyToOrder,
@@ -20,27 +19,23 @@ public class CustomerActions : MonoBehaviour
 
     [SerializeField] ClickMovement clickMovement;
     [SerializeField] private GameObject ExclamationPoint;
+    [SerializeField] GameObject Player;
+    [SerializeField] GameObject Customer;
 
     public UnityEvent orderPlaced;
 
-    public void CustomerOrders()
-    {
-        Debug.Log(clickMovement.customerIsSitting);
-        if (clickMovement.customerIsSitting)
-        {
-            StartCoroutine(OrderWaitTime());
-        }
-    }
-    IEnumerator OrderWaitTime()
-    {
-        yield return new WaitForSeconds(5);
-        ExclamationPoint.SetActive(true);
-        Debug.Log("I'm ready to order");
-        orderPlaced.Invoke();
-    }
+    //IEnumerator OrderWaitTime()
+    //{
+    //    yield return new WaitForSeconds(5);
+    //    ExclamationPoint.SetActive(true);
+    //    Debug.Log("I'm ready to order");
+    //    orderPlaced.Invoke();
+    //}
 
-    private void SeatAtTable()
+    public void SeatAtTable(Table table)
     {
-        currentState = CustomerState.WaitingToBeSeated;
+        if (currentState != CustomerState.WaitingToBeSeated) return;
+        currentState = CustomerState.Seated;
+        Customer.transform.position = table.seatPosition.position;
     }
 }
