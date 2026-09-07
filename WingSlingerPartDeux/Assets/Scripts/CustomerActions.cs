@@ -1,7 +1,8 @@
-using System.Collections.Generic;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using static UnityEngine.Rendering.DebugUI;
 
 public class CustomerActions : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class CustomerActions : MonoBehaviour
     [SerializeField] ClickMovement clickMovement;
     [SerializeField] Player player;
     [SerializeField] private GameObject ExclamationPoint;
+    [SerializeField] private GameObject OrderPic;
     [SerializeField] GameObject PlayerChar;
     [SerializeField] SpriteRenderer playerSpriteRenderer;
     [SerializeField] GameObject Customer;
@@ -45,16 +47,32 @@ public class CustomerActions : MonoBehaviour
     }
     public void TakeOrder(Table table)
     {
-        Debug.Log($"State: {currentState}, Busy: {player.IsBusy()}");
         if (currentState != CustomerState.ReadyToOrder) return;
         if (player.IsBusy()) return;
         PlayerChar.transform.position = table.orderPosition.position;
-        if (table.playerFacesLeft) playerSpriteRenderer.flipX = true;
+        FlipPlayerSprite(table);
         ExclamationPoint.SetActive(false);
         player.SetBusy(true);
-        
-        // Put Order above Player's Head
+        StartCoroutine(ShowOrderPic());
+        player.SetBusy(false);
         // Bring to counter & drop off order
-        //player.isBusy = false;
+    }
+
+    IEnumerator ShowOrderPic()
+    {
+        yield return new WaitForSeconds(2f);
+        OrderPic.SetActive(true);
+    }
+
+    private void FlipPlayerSprite(Table table)
+    {
+        if (table.playerFacesLeft)
+        {
+            playerSpriteRenderer.flipX = true;
+        }
+        else
+        {
+            playerSpriteRenderer.flipX = false;
+        }
     }
 }
