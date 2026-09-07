@@ -24,18 +24,31 @@ public class CustomerActions : MonoBehaviour
 
     public UnityEvent orderPlaced;
 
-    //IEnumerator OrderWaitTime()
-    //{
-    //    yield return new WaitForSeconds(5);
-    //    ExclamationPoint.SetActive(true);
-    //    Debug.Log("I'm ready to order");
-    //    orderPlaced.Invoke();
-    //}
+    IEnumerator OrderWaitTime()
+    {
+        currentState = CustomerState.WaitingToOrder;
+        yield return new WaitForSeconds(5);
+        ExclamationPoint.SetActive(true);
+        currentState = CustomerState.ReadyToOrder;
+        //Debug.Log("I'm ready to order");
+        //orderPlaced.Invoke();
+    }
 
     public void SeatAtTable(Table table)
     {
         if (currentState != CustomerState.WaitingToBeSeated) return;
         currentState = CustomerState.Seated;
         Customer.transform.position = table.seatPosition.position;
+        StartCoroutine(OrderWaitTime());
+    }
+    public void TakeOrder(Table table)
+    {
+        if (currentState != CustomerState.ReadyToOrder) return;
+        Player.transform.position = table.orderPosition.position;
+        ExclamationPoint.SetActive(false);
+        // Put paper on table 
+        // Click paper
+        // Bring to counter 
+        // Drop off at counter
     }
 }

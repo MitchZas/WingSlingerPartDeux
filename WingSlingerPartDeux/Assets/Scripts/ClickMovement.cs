@@ -29,4 +29,10 @@ public class ClickMovement : MonoBehaviour
         Table table = clickedObject.GetComponent<Table>();
         CustomerActions.SeatAtTable(table);
     }
+    public void ServerToTable(GameObject clickedObject)
+    {
+        if (!clickedObject.CompareTag("Table")) return;
+        Table table = clickedObject.GetComponent<Table>();
+        CustomerActions.TakeOrder(table);
+    }
 }
